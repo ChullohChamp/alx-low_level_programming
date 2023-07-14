@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time>
+#include <time.h>
 
 /**
  * main - Entry point
@@ -13,12 +13,12 @@ int main(void)
 
 	for (letter = 'a'; letter <= 'z' ; letter++)
 	{
-		if (letter != 'q' && != 'e')
+		if (letter != 'q' && letter != 'e')
 		{
 			putchar(letter);
 		}
 	}
-	putchar("\n");
+	putchar('\n');
 
 	return (0);
 }
