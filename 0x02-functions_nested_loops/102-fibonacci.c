@@ -23,7 +23,7 @@ int main(void)
 			printf(", %ld", c);
 		}
 
-		++a;
+		++i;
 	}
 
 	printf("\n");
