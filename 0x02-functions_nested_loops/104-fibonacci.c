@@ -10,15 +10,15 @@ int main(void)
 	unsigned int prev = 1, current = 2, next;
 	int count;
 
-	printf("%u, %u", prev, current);
+	printf("%lu, %lu", prev, current);
 
 	for (count = 2; count < 98; count++)
 	{
 		next = prev + current;
-		printf(", %u", next);
+		printf(", %lu", next);
 		prev = current;
 		current = next;
-	}	
+	}
 
 	printf("\n");
 	return (0);
