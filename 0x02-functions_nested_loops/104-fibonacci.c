@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long prev = 1, current = 2, next;
+	unsigned int prev = 1, current = 2, next;
 	int count;
 
 	printf("%lu, %lu", prev, current);
