@@ -2,9 +2,9 @@
 /**
  * _abs - computes the absolute value of an integer
  *
- * Return: Always 0
+ * Return: absolute value of the number or 0
  */
-int _abs(int)
+int _abs (int)
 {
 	if (c < 0)
 	{
