@@ -1,22 +1,18 @@
 #include "main.h"
+
 /**
-  * print_numbers - Print the numbers since 0 up to 9
+  * print_numbers - Prints the numbers from 0 to 9
   *
-  * Return: The numbers since 0 up to 9
+  * Return: The numbers from 0 to 9
   */
-void _putchar(char c)
-{
-    // Implement the _putchar function as per your requirements.
-    // For simplicity, I'll use printf here.
-    printf("%c", c);
-}
 void print_numbers(void)
 {
-	char numbers[] = "0123456789\n";
-	int i = 0;
-	while (numbers[i] != '\0') 
+	int x;
+
+	for (x = 0; x <= 9; x++)
 	{
-	_putchar(numbers[i]);
-	i++;
-    	}
+		_putchar(x + '0');
+	}
+
+	_putchar('\n');
 }
