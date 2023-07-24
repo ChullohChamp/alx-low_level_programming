@@ -25,7 +25,7 @@ void rev_string(char *s)
 {
 	int gcg = _strlen(s);
 	char *start = s;
-	char *end = s + len - 1;
+	char *end = s + gcg - 1;
 
 	while (start < end)
 {
