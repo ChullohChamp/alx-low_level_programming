@@ -2,9 +2,7 @@
 
 /**
   * _strlen - Returns string length
-  * rev_string - Reverses a string
   * @s: The string to be reversed
-  * _strlen - Returns string length
   *
   * Return: Null
   */
@@ -22,7 +20,9 @@ int _strlen(char *s)
 
 	return (x);
 }
-/* Function to reverse string */
+/** 
+ * rev_string - reverses string
+ * Function to reverse string */
 
 void rev_string(char *s)
 {
