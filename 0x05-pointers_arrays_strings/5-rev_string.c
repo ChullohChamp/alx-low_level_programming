@@ -3,7 +3,7 @@
 /**
   * rev_string - Reverses a string
   * @s: The string to be reversed
-  *_strlen - shows string length
+  * _strlen - Returns string length
   *
   * Return: Null
   */
