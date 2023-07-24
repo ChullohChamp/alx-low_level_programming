@@ -20,9 +20,11 @@ int _strlen(char *s)
 
 	return (x);
 }
-/** 
+/**
  * rev_string - reverses string
- * Function to reverse string */
+ * @s: Pointer to character
+ * Function to reverse string 
+ */
 
 void rev_string(char *s)
 {
