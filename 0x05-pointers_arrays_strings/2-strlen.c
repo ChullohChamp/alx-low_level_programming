@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _stlen - prints the lenght of a string
+ * _strlen - prints the lenght of a string
  *
  * @s:string to be tested
  * Return: String length
