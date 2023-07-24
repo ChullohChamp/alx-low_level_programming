@@ -23,7 +23,7 @@ int _strlen(char *s)
 /**
  * rev_string - reverses string
  * @s: Pointer to character
- * Function to reverse string 
+ * Function to reverse string
  */
 
 void rev_string(char *s)
