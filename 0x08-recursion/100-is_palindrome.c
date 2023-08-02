@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-  * is_palindrome - checks if a string is palindrome
-  * @s: the string parameter
-  *
+  *palindromeChecker - checks if a string is palindrome
+  * @str: the string parameter
+  * @len: string lenght
   * Return: integer value
   */
 
@@ -19,7 +19,7 @@ int palindromeChecker(char *str, int len, int i)
 /**
  * _strlen_recursion - returns string length
  *
- * @s: the string parameter
+ *@i: the incrementor
  *
  * Return: string length
  */
@@ -35,7 +35,7 @@ int _strlen_recursion(char *s)
 /**
  * is_palindrome - checks if a string is a palindrome
  *
- * @s: the string to check
+ * @*s: the string to check
  *
  * Return: 1 if it's a palindrome, 2 if it's not
  */
