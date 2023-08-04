@@ -2,50 +2,47 @@
 #include <stdlib.h>
 
 /**
- *minCoins: minimum coins needed
- * to make change
- * @cents: value of coins
- * denominations: types of coins available
- * numCoins: number of coins
- * Return: returns 0
+*main - prints the minimum number of needed coins to make change
+*@argc: argument count
+*@argv: array of arguments
+*Return: returns 0 for success and 1 for errors
 */
-
-int minCoins(int cents)
-{
-	if (cents < 0)
-	return (0);
-
-	int denominations[] = {25, 10, 5, 2, 1};
-	int numCoins = 0;
-
-	for (int i = 0; i < sizeof(denominations) / sizeof(denominations[0]); i++)
-{
-	numCoins += cents / denominations[i];
-	cents %= denominations[i];
-}
-
-	return (numCoins);
-}
-
-/**
- *main: checks number of arguments
- *@argc: number of arguments
- *@argv: array of arguments
- * Return: 0
- */
 
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
+int cents, coins = 0;
+
+if (argc != 2)
 {
 	printf("Error\n");
 	return (1);
 }
-
-	int cents = atoi(argv[1]);
-	int result = minCoins(cents);
-
-	printf("%d\n", result);
-
-	return (0);
+cents = atoi(argv[1]);
+while (cents > 0)
+{
+	coins++;
+	if ((cents - 25) >= 0)
+	{
+		cents -= 25;
+		continue;
+	}
+	if ((cents - 10) >= 0)
+	{
+		cents -= 10;
+		continue;
+	}
+	if ((cents - 5) >= 0)
+	{
+		cents -= 5;
+		continue;
+	}
+	if ((cents - 2) >= 0)
+	{
+		cents -= 2;
+		continue;
+	}
+	cents--;
+}
+printf("%d\n", coins);
+return (0);
 }
