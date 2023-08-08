@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
   * argstostr - concatenates all the arguments of the program
@@ -9,47 +8,47 @@
   *
   * Return: ...
   */
+
 char *argstostr(int ac, char **av)
 {
-	int ch = 0, i = 0, j = 0, k = 0;
+	int total_length = 0, current_position = 0;
 	char *s;
 
 	if (ac == 0 || av == NULL)
-		return (NULL);
+	return (NULL);
 
-	while (i < ac)
+	for (int i = 0; i < ac; i++)
+{
+	int arg_length = 0;
+
+	while (av[i][arg_length] != '\0')
+		arg_length++;
+
+		total_length += arg_length + 1;
+}
+
+	s = (char *)malloc(total_length * sizeof(char) + 1);
+
+	if (s == NULL)
+	return (NULL);
+
+	for (int i = 0; i < ac; i++)
+{
+	int arg_length = 0;
+
+	while (av[i][arg_length] != '\0')
 	{
-		while (av[i][j])
-		{
-			ch++;
-			j++;
-		}
-
-		j = 0;
-		i++;
+		s[current_position] = av[i][arg_length];
+		current_position++;
+		arg_length++;
 	}
 
-	s = malloc((sizeof(char) * ch) + ac + 1);
+		s[current_position] = '\n';
+		current_position++;
+}
 
-	i = 0;
-	while (av[i])
-	{
-		while (av[i][j])
-		{
-			s[k] = av[i][j];
-			k++;
-			j++;
-		}
+	s[current_position] = '\0';
 
-		s[k] = '\n';
-
-		j = 0;
-		k++;
-		i++;
-	}
-
-	k++;
-	s[k] = '\0';
 	return (s);
 }
 
