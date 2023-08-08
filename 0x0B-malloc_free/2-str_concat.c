@@ -4,7 +4,7 @@
 
 /**
   * str_concat - Concatenates two strings of any size
-  * @s1: the first string 
+  * @s1: the first string
   * @s2: the second string
   *
   * Return: the two strings concatenated
