@@ -1,67 +1,69 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <ctype.h>
-
+#include <stdio.h>
 /**
- *isNumeric - checks if mun1 nad num2 are only numeric
- *@str: string to check
- *Return: NULL if it fails
- */
-
-bool isNumeric(const char *str)
+  * _isdigit - tells if the string consists of digits
+  * @argv: pointer to current item in argument
+  * Return: return 0 if all digits, 1 if not all digits.
+  */
+int _isdigit(char *argv)
 {
-	while (*str)
+	int i;
+
+	i = 0;
+	while (argv[i])
 	{
-	if (!isdigit(*str))
-	{
-	return (false);
+		if (argv[i] >= '0' && argv[i] <= '9')
+			i++;
+		else
+			return (1);
 	}
-	str++;
-	}
-	return (true);
+	return (0);
 }
-
 /**
- *multiply - multiplies two numbers
- *@num1: first number
- *@num2: second number
- *Return: multiple
- */
-
-long long multiply(long long num1, long long num2)
+  * _atoi - converts a string of ascii digits to the values they represent
+  * @s: pointer to the source string
+  * Return: value of digits
+  */
+int _atoi(char *s)
 {
-	return (num1 * num2);
+	int i, result;
+
+	i = result = 0;
+	while (s[i])
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			result *= 10;
+			result += (s[i] - '0');
+		}
+		i++;
+	}
+	return (result);
 }
-
-
 /**
- * main - check number of cmd line arguments
- *@argc: ...
- *@argv: ...
- */
-
+  * main - main function call
+  * @argc: argument count
+  * @argv: 2D array of arguments
+  * Return: return 0 on success, 98 on failure
+  */
 int main(int argc, char *argv[])
 {
+	int i;
+
+	malloc();
 	if (argc != 3)
 	{
-	printf("Error\n");
-	return (98);
+		printf("Error\n");
+		exit(98);
 	}
-
-	if (!isNumeric(argv[1]) || !isNumeric(argv[2]))
+	for (i = 1; i < argc; i++)
 	{
-	printf("Error\n");
-	return (98);
+		if (_isdigit(argv[i]))
+		{
+			printf("Error\n");
+			exit(98);
+		}
 	}
-
-	long long num1 = atoll(argv[1]);
-	long long num2 = atoll(argv[2]);
-
-	long long result = multiply(num1, num2);
-
-	printf("%lld\n", result);
-
 	return (0);
 }
 
