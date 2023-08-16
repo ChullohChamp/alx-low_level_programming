@@ -1,5 +1,5 @@
 #include "function_pointers.h"
-#include <stdio.h>
+#include <stddef.h>
 
 /**
  * array_iterator - prints name using pointer to function
@@ -11,14 +11,11 @@
 
 void array_iterator(int *array, size_t size, void (*action)(int));
 {
+	size_t i = -1;
 
-	if (array == NULL || action == NULL)
-		return;
-
-	while (size-- > 0)
+	if (array && action)
 	{
-		action(*array);
-		array++;
+		while (++i < size)
+			action(array[i]);
 	}
-
 }
