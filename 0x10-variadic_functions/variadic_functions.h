@@ -1,5 +1,6 @@
 #ifndef VARIADIC_FUNCTIONS
 #define VARADIC_FUNCTIONS
+#include <stdarg.h>
 
 typedef struct validTypes
 {
