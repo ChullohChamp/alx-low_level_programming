@@ -6,9 +6,9 @@
  * @head: Pointer to address of current list
  * @n: Integer to add
  *
- * Return: Address of the new node
- *else  NULL if failed
+ * Return: Address of the new node, or NULL if failed
  */
+
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 	listint_t *current = *head;
@@ -17,13 +17,13 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 
 	if (new == NULL)
 	{
-	return (NULL);
+		return (NULL);
 	}
 
 	new->n = n;
 	new->next = NULL;
 
-	if (*head = NULL)
+	if (*head == NULL)
 	{
 		*head = new;
 		return (new);
@@ -33,6 +33,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	{
 		current = current->next;
 	}
+
 
 	current->next = new;
 	return (new);
