@@ -7,21 +7,20 @@
  * @head: Pointer to linked lists head
  *
  * Return: Head node's data
- * else 0 if linked list is empty
+ * else 0 if list is empty
  */
 
 int pop_listint(listint_t **head)
 {
-	listint_t *temp;
-	int data = 0;
+	listint_t *tmp;
+	int num = 0;
 
-	if (*head != NULL)
+	if (*head)
 	{
-		temp = (*head)->next;
-		data = (*head)->data;
+		num = (*head)->n;
+		tmp = (*head)->next;
 		free(*head);
-		*head = new_head;
+		*head = tmp;
 	}
-
-	return (n);
+		return (num);
 }
