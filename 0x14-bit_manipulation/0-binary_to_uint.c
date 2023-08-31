@@ -8,29 +8,39 @@
  * 0 if there is one or more chars in the string that is not 0 or 1
  * 0 if b is NULL
  */
+
 unsigned int binary_to_uint(const char *b)
 {
-	if (!b)
+	unsigned int len = 0, count = 0, sum = 0;
+
+	if (b == NULL)
 		return (0);
 
-	unsigned int result = 0;
-	unsigned int power_of_two = 1;
-	int length = 0;
-
-	while (b[length])
+	len = _strlen(b);
+	while (len--)
 	{
-		if (b[length] != '0' && b[length] != '1')
+		if (b[len] != 48 && b[len] != 49)
 			return (0);
-		length++;
+
+		if (b[len] == 49)
+			sum += 1 << count;
+
+		count++;
 	}
 
-	while (length > 0)
-	{
-		result += (b[length - 1] - '0') * power_of_two;
-		power_of_two *= 2;
-		length--;
-	}
-
-	return (result);
+	return (sum);
 }
 
+/**
+  * _strlen - calculates the length of a string
+  * @s: string to use
+  * Return: length of string
+  */
+unsigned int _strlen(const char *s)
+{
+	unsigned int i;
+
+	for (i = 0; s[i]; i++)
+		;
+	return (i);
+}
